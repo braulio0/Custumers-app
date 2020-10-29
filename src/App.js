@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
-import {Link, BrowserRouter as Router} from 'react-router-dom';
+import {Link, BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 class App extends Component{
+  renderHome = () => <h1> home</h1>;
+  renderCustomersContainer = () => <h1>Customers container</h1>;
+  renderCustomersListContainer = () => <h1> Customers list container</h1>;
+  renderCustomersNewContainer = () => <h1> Customers new container</h1>;
   render() {
     return (
       <Router>
-        <div className="App">
-          <Link to="/customers"> Customers </Link><br></br> 
-          <Link to="/customers/30000000"> Customers 30.000.000 </Link> 
+        <div>
+          <Route exact path="/" component={this.renderHome}/>
+          <Route exact path="/customers" component={this.renderCustomersListContainer}/>
+          <Route exact path="/customers/:dni" component={this.renderCustomersContainer}/>
+          <Route exact path="/customers/new" component={this.renderCustomersNewContainer}/>
+        
         </div>
       </Router>
     );
