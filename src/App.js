@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Link, BrowserRouter as Router, Route} from 'react-router-dom';
+import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
+import HomeContainer from './Containers/HomeContainer';
 class App extends Component{
   renderHome = () => <h1> home</h1>;
   renderCustomersContainer = () => <h1>Customers container</h1>;
@@ -10,11 +11,13 @@ class App extends Component{
     return (
       <Router>
         <div>
-          <Route exact path="/" component={this.renderHome}/>
+          <Route exact path="/" component={HomeContainer}/>
           <Route exact path="/customers" component={this.renderCustomersListContainer}/>
-          <Route exact path="/customers/:dni" component={this.renderCustomersContainer}/>
-          <Route exact path="/customers/new" component={this.renderCustomersNewContainer}/>
-        
+          <Switch>
+           <Route  path="/customers/new" component={this.renderCustomersNewContainer}/>
+            <Route  path="/customers/:dni" component={this.renderCustomersContainer}/>
+          </Switch>
+                
         </div>
       </Router>
     );
