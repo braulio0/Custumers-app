@@ -94,8 +94,8 @@ code {
 }
 
 .app-frame p {
-  color: white;
-  font-size: 10px;
+  color: black;
+  font-size: 18px;
   font-style: italic;
 }
 
@@ -135,8 +135,8 @@ code {
   border-color: white;
 }
 
-.app-header h1 {
-  color: white;
+.app-frame h1 {
+  color: black;
 }
 
 .app-frame h2 {

@@ -9,7 +9,7 @@ import {fetchCustomers} from './../acions/fetchCustomers';
 import { getCustomers } from './../Selector/customers';
 
 
-
+// clase donde se realiza el render de lo que contiene el json server
 class CustomersContainer extends Component {
   
   componentDidMount(){
@@ -24,7 +24,7 @@ class CustomersContainer extends Component {
     <div>
       <CustomerList 
         customers = { customers }
-        urlpath={ 'customer/' }
+        urlpath={ 'customers/' }
         />
       <CustomerActions>
         <button onClick={this.handleAddNew} >
