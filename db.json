@@ -1,20 +1,24 @@
 {
   "customers": [
-    { "dni": "27000000",
-      "name": "Juan Perez",
-      "age": 37
+    {
+      "id": "27000000",
+      "dni": "27000000",
+      "name": "Carlos Perez",
+      "age": "89"
     },
-    { "dni": "28000000",
-      "name": "Ruben Perez",
+    {
+      "id": "28000000",
+      "dni": "28000000",
+      "name": "Mario Perez",
       "age": 17
     },
-    { "dni": "29000000",
+    {
+      "id": "29000000",
+      "dni": "29000000",
       "name": "Raul Perez",
       "age": 27
     }
-],
-
-
+  ],
   "posts": [
     {
       "id": 1,

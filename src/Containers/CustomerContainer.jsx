@@ -7,6 +7,7 @@ import {Route, withRouter} from 'react-router-dom';
 import CustomerEdit from './../Components/CustomerEdit'
 import CustomerData from '../Components/CustomerData';
 import { fetchCustomers } from './../acions/fetchCustomers' 
+import { updateCustomers } from './../acions/updateCustomers' 
 
 class CustomerContainer extends Component {
 
@@ -19,6 +20,8 @@ class CustomerContainer extends Component {
 
   handleSubmit = values => {
     console.log(JSON.stringify(values));
+    const { id  } = values;
+    this.props.updateCustomers(id, values);
   }
 
   handleOnBack = () =>{
@@ -54,12 +57,17 @@ class CustomerContainer extends Component {
 
 CustomerContainer.propTypes = {
   dni: PropTypes.string.isRequired,
-  customers: PropTypes.object.isRequired,
+  customers: PropTypes.object,
   fetchCustomers: PropTypes.func.isRequired,
+  updateCustomer: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state, props) => ({
 
   customer: getCustomersByDni(state,props) 
   }
 );
-export default withRouter(connect(mapStateToProps, {fetchCustomers})(CustomerContainer)); 
+export default withRouter(connect(mapStateToProps, {
+  fetchCustomers,
+  updateCustomers
+
+})(CustomerContainer)); 
